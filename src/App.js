@@ -25,7 +25,7 @@ function App() {
       <Header />
 
       <Routes>
-        <Route path="/" element={<HomePage character={characters} />} />
+        <Route path="/" element={<HomePage characters={characters} />} />
         <Route path="/about" element={<About />} />
       </Routes>
     </BrowserRouter >

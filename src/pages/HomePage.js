@@ -1,5 +1,6 @@
 import React from 'react'
 import Search from '../components/Search';
+import CharacterCard from '../components/CharacterCard';
 
 function HomePage({ characters }) {
 
@@ -10,7 +11,7 @@ function HomePage({ characters }) {
             <div className="characters-container">
                 {
                     characters.map((item) => {
-                        return <p>{item.name}</p>
+                        return <CharacterCard key={item.id} card={item} />
                     })
                 }
 
