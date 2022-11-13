@@ -3,11 +3,11 @@ import Search from '../components/Search';
 import CharacterCard from '../components/CharacterCard';
 import '../styles/Home.css'
 
-function HomePage({ characters }) {
+function HomePage({ characters, setCharacters }) {
 
     return (
         <div>
-            <Search />
+            <Search setCharacters={setCharacters} />
             <h1>Main Characters</h1>
             <div className="characters-container">
                 {

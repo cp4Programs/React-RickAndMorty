@@ -27,7 +27,7 @@ function App() {
       <Header />
 
       <Routes>
-        <Route path="/Home" element={<HomePage characters={characters} />} />
+        <Route path="/Home" element={<HomePage characters={characters} setCharacters={setCharacters} />} />
         <Route path="/about" element={<About />} />
         <Route path="/details/:characterId" element={<CharacterDetails />} />
       </Routes>

@@ -6,7 +6,7 @@ function characterCard({ card }) {
         <div className="card-container">
             <img src={card.image} className="character-card" />
             <div>{card.name}</div>
-            <button className="character-card">See Details</button>
+            <a href={`/details/${card.id}`}><button>See Details</button></a>
 
         </div>
     )
