@@ -6,6 +6,8 @@ import CharacterDetails from './pages/CharacterDetails';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import HomePage from './pages/HomePage';
 import axios from 'axios';
+import UserContextProvider from './contexts/UserContext';
+import ThemeContextProvider from './contexts/ThemeContext';
 
 function App() {
 
@@ -24,13 +26,16 @@ function App() {
 
   return (
     <BrowserRouter >
-      <Header />
-
-      <Routes>
-        <Route path="/Home" element={<HomePage characters={characters} setCharacters={setCharacters} />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/details/:characterId" element={<CharacterDetails />} />
-      </Routes>
+      <UserContextProvider>
+        <ThemeContextProvider>
+          <Header />
+          <Routes>
+            <Route path="/Home" element={<HomePage characters={characters} setCharacters={setCharacters} />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/details/:characterId" element={<CharacterDetails />} />
+          </Routes>
+        </ThemeContextProvider>
+      </UserContextProvider>
     </BrowserRouter >
   );
 }

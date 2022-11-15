@@ -1,12 +1,24 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './styles/header.css'
+import { UserContext } from './contexts/UserContext'
+import { ThemeContext } from './contexts/ThemeContext'
+import { Link } from 'react-router-dom'
 
 function Header() {
+    const { userName, setUserName } = useContext(UserContext)
+    const { darkMode, setDarkMode } = useContext(ThemeContext)
+
     return (
-        <div className="header-container">
-            <a href="/Home">Home</a>
-            <a href="/about">About</a>
-        </div>
+        <div className={darkMode ? "header-container header-dark" : "header-container"}>
+            <div>
+                <Link to="/Home">Home</Link>
+                <Link to="/about">About</Link>
+            </div>
+            <div style={{ display: "flex" }}>
+                <p style={{ margin: "10px 10px 10px 10px" }}>Welcome {userName}</p>
+                <button onClick={() => setDarkMode(!darkMode)}>{darkMode ? "Light Mode" : "Dark Mode"}</button>
+            </div>
+        </ div>
     )
 }
 

@@ -1,4 +1,4 @@
-.header-container {
+.about-container {
     background-color: rgb(102, 92, 171);
     height: 40px;
     padding: 0 20px;
@@ -9,6 +9,8 @@
 }
 
 
-.header-dark {
+.about-dark {
     background-color: black;
+    color: white;
+
 }

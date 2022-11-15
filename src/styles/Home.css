@@ -8,3 +8,9 @@
     flex-wrap: wrap;
     justify-content: center;
 }
+
+.characters-dark,
+.home-dark {
+    background-color: black;
+    color: white;
+}
